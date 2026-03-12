@@ -1,6 +1,6 @@
 Analysis is being done on Big Query
 
-##1. Summary per State
+# 1. Summary per State
 select state,
     SUM(sales) AS total_sales
 from `salesanalysis.sales`
@@ -9,7 +9,7 @@ GROUP BY
 ORDER BY
     total_sales DESC
 
-##2. Summary per Region
+# 2. Summary per Region
 select Region,
     SUM(sales) AS total_sales
 from `salesanalysis.sales`
@@ -18,7 +18,7 @@ GROUP BY
 ORDER BY
     total_sales DESC
 
-##3. Summary per Categories & Sub Categories
+# 3. Summary per Categories & Sub Categories
 select Category, `Sub-Category`,
     SUM(sales) AS total_sales
 from `salesanalysis.sales`
