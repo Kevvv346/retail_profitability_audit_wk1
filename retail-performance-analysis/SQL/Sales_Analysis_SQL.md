@@ -7,7 +7,7 @@ from `salesanalysis.sales`
 GROUP BY
     state
 ORDER BY
-    total_sales DESC
+   state, total_sales DESC
 
 # 2. Summary per Region
 select Region,
@@ -16,7 +16,7 @@ from `salesanalysis.sales`
 GROUP BY
     Region
 ORDER BY
-    total_sales DESC
+    Region,total_sales DESC
 
 # 3. Summary per Categories & Sub Categories
 select Category, `Sub-Category`,
@@ -26,3 +26,13 @@ GROUP BY
     Category, `Sub-Category`
 ORDER BY
     Category,`Sub-Category`,total_sales DESC
+
+# 4. Summary per State
+select State, 
+    SUM(sales) AS total_sales
+from `salesanalysis.sales`
+GROUP BY
+    State, `Sub-Category`
+ORDER BY
+    State,total_sales DESC
+
