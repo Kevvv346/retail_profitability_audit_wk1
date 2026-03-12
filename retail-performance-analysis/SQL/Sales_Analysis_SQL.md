@@ -34,5 +34,16 @@ from `salesanalysis.sales`
 GROUP BY
     State, `Sub-Category`
 ORDER BY
+
+# 5. Monthlys Sales Analysis
+SELECT
+    DATE_TRUNC(`Order Date`, MONTH) AS sales_month,
+    SUM(Sales) AS monthly_sales
+FROM
+    `salesanalysis.sales`
+GROUP BY
+    sales_month
+ORDER BY
+    sales_month;
     State,total_sales DESC
 
